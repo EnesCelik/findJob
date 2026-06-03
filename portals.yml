@@ -1,0 +1,195 @@
+title_filter:
+  positive:
+    - "QA"
+    - "Quality Assurance"
+    - "Test Automation"
+    - "Automation Engineer"
+    - "QA Automation"
+    - "Software Test"
+    - "SDET"
+    - "Quality Engineer"
+    - "Test Engineer"
+    - "Senior QA"
+    - "Senior Test Engineer"
+    - "Senior Automation Engineer"
+  negative:
+    - "Junior"
+    - "Intern"
+    - "Mobile Developer"
+    - "Frontend Developer"
+    - "Backend Developer"
+    - "Embedded"
+    - "Firmware"
+    - "SAP"
+    - "Sales"
+  seniority_boost:
+    - "Senior"
+    - "Lead"
+    - "Principal"
+
+location_filter:
+  require_remote_elsewhere_in_country: false
+  country_keywords:
+    - "Turkey"
+    - "Türkiye"
+  remote_keywords:
+    - "Remote"
+    - "Fully Remote"
+    - "Remote First"
+    - "Home Office"
+  office_cities:
+    - "Ankara"
+  always_allow:
+    - "Remote"
+    - "Relocation"
+    - "Visa"
+    - "Sponsorship"
+    - "Turkey"
+    - "Türkiye"
+    - "Ankara"
+    - "Istanbul"
+    - "İstanbul"
+    - "Germany"
+    - "Netherlands"
+    - "United Kingdom"
+    - "Ireland"
+    - "Sweden"
+    - "Denmark"
+  allow:
+    - "Remote"
+    - "Fully Remote"
+    - "Remote First"
+    - "Relocation"
+    - "Visa"
+    - "Sponsorship"
+    - "Turkey"
+    - "Türkiye"
+    - "Ankara"
+    - "Istanbul"
+    - "İstanbul"
+    - "Germany"
+    - "Netherlands"
+    - "United Kingdom"
+    - "Ireland"
+    - "Sweden"
+    - "Denmark"
+    - "Poland"
+    - "Romania"
+    - "Portugal"
+    - "Spain"
+    - "Europe"
+  block:
+    - "USA"
+    - "United States"
+    - "Canada"
+    - "India"
+    - "APAC"
+
+search_queries:
+  - name: "LinkedIn QA Automation"
+    query: '"Senior QA" OR "Test Automation Engineer" OR SDET remote OR relocation Europe site:linkedin.com/jobs'
+    enabled: true
+  - name: "Turkey QA Automation"
+    query: '"QA Automation Engineer" OR "Test Automation Engineer" OR SDET Turkey OR Türkiye remote'
+    enabled: true
+  - name: "Greenhouse QA Roles"
+    query: 'site:job-boards.greenhouse.io OR site:boards.greenhouse.io "QA Automation" OR "SDET" OR "Test Automation Engineer" remote OR relocation OR visa'
+    enabled: true
+  - name: "Lever QA Roles"
+    query: 'site:jobs.lever.co "QA Engineer" OR "SDET" OR "Test Automation Engineer" remote OR relocation'
+    enabled: true
+  - name: "Ashby QA Roles"
+    query: 'site:jobs.ashbyhq.com "QA Automation" OR "Quality Engineer" OR "SDET" remote OR relocation'
+    enabled: true
+  - name: "General Europe QA Search"
+    query: '"Senior Software QA Specialist" OR "Senior Test Automation Engineer" OR SDET Europe relocation OR visa sponsorship'
+    enabled: true
+  - name: "Germany QA Automation"
+    query: '"Senior QA Automation Engineer" OR "Senior Test Automation Engineer" Germany remote OR relocation OR Berlin OR Munich'
+    enabled: true
+  - name: "Netherlands QA Automation"
+    query: '"Senior QA Automation Engineer" OR SDET Netherlands remote OR relocation OR Amsterdam'
+    enabled: true
+  - name: "UK QA Automation"
+    query: '"Senior Test Automation Engineer" OR "Senior QA Engineer" "United Kingdom" remote OR visa sponsorship'
+    enabled: true
+  - name: "CEE QA Automation"
+    query: '"QA Automation Engineer" OR SDET Poland OR Romania OR Czechia remote OR relocation senior'
+    enabled: true
+  - name: "Nordics QA Automation"
+    query: '"Senior QA Automation Engineer" OR SDET Sweden OR Denmark relocation OR visa'
+    enabled: true
+  - name: "Ireland QA Automation"
+    query: '"Senior Test Automation Engineer" OR "Senior QA Engineer" Ireland remote OR relocation OR sponsorship'
+    enabled: true
+
+tracked_companies:
+  - name: "Appier"
+    careers_url: "https://job-boards.greenhouse.io/appier"
+    api: "https://boards-api.greenhouse.io/v1/boards/appier/jobs"
+    notes: "Includes Turkey-based fully remote QA automation roles."
+    enabled: true
+  - name: "Pointr"
+    careers_url: "https://jobs.ashbyhq.com/pointr"
+    notes: "Turkey-based QA roles with Ankara office signal."
+    enabled: true
+  - name: "Colonist"
+    careers_url: "https://jobs.ashbyhq.com/colonist"
+    notes: "Fully remote company with Turkey listed among supported locations."
+    enabled: true
+  - name: "GT"
+    careers_url: "https://jobs.ashbyhq.com/gt-hq"
+    notes: "Includes Turkey-remote QA automation roles for partner companies."
+    enabled: true
+  - name: "Ruby Labs"
+    careers_url: "https://jobs.ashbyhq.com/ruby-labs"
+    notes: "Remote-friendly roles that explicitly include Turkey in location coverage."
+    enabled: true
+  - name: "Parloa"
+    careers_url: "https://job-boards.eu.greenhouse.io/parloa"
+    api: "https://boards-api.greenhouse.io/v1/boards/parloa/jobs"
+    notes: "Berlin-based, good relocation signal, enterprise AI."
+    enabled: true
+  - name: "Intercom"
+    careers_url: "https://job-boards.greenhouse.io/intercom"
+    api: "https://boards-api.greenhouse.io/v1/boards/intercom/jobs"
+    notes: "Dublin presence, established engineering org."
+    enabled: true
+  - name: "PolyAI"
+    careers_url: "https://job-boards.eu.greenhouse.io/polyai"
+    api: "https://boards-api.greenhouse.io/v1/boards/polyai/jobs"
+    notes: "UK-based voice AI company."
+    enabled: true
+  - name: "Delivery Hero"
+    careers_url: "https://jobs.smartrecruiters.com/DeliveryHero"
+    notes: "Berlin HQ, relocation-friendly tech org."
+    enabled: true
+  - name: "Jitterbit"
+    careers_url: "https://jobs.smartrecruiters.com/Jitterbit"
+    notes: "Remote-friendly; known SDET/QA postings."
+    enabled: true
+  - name: "ElevenLabs"
+    careers_url: "https://jobs.ashbyhq.com/elevenlabs"
+    notes: "Remote-first Europe-friendly company."
+    enabled: true
+  - name: "zaimler"
+    careers_url: "https://jobs.lever.co/zaimler"
+    notes: "Has software engineer in test roles."
+    enabled: true
+  - name: "Saviynt"
+    careers_url: "https://jobs.lever.co/saviynt"
+    notes: "Has principal SDET openings."
+    enabled: true
+  - name: "Deepgram"
+    careers_url: "https://jobs.ashbyhq.com/deepgram"
+    notes: "Remote-friendly AI company; broader engineering coverage."
+    enabled: true
+  - name: "Synthesia"
+    careers_url: "https://jobs.ashbyhq.com/synthesia"
+    notes: "London/Europe remote-friendly AI company."
+    enabled: true
+  - name: "Contentful"
+    careers_url: "https://job-boards.greenhouse.io/contentful"
+    api: "https://boards-api.greenhouse.io/v1/boards/contentful/jobs"
+    notes: "Berlin/London/Dublin presence; international engineering org."
+    enabled: true

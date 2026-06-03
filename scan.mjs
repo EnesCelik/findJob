@@ -162,10 +162,29 @@ export function buildLocationFilter(locationFilter) {
   const alwaysAllow = normalizeKeywordList(locationFilter.always_allow);
   const allow = normalizeKeywordList(locationFilter.allow);
   const block = normalizeKeywordList(locationFilter.block);
+  const remoteKeywords = normalizeKeywordList(locationFilter.remote_keywords || ['remote']);
+  const officeCities = normalizeKeywordList(locationFilter.office_cities);
+  const countryKeywords = normalizeKeywordList(locationFilter.country_keywords);
+  const requireRemoteElsewhere = locationFilter.require_remote_elsewhere_in_country === true;
 
-  return (location) => {
+  return (input) => {
+    const location = typeof input === 'string' ? input : input?.location;
+    const title = typeof input === 'string' ? '' : (input?.title || '');
     if (typeof location !== 'string' || location.trim() === '') return true;
     const lower = location.toLowerCase();
+    const titleLower = typeof title === 'string' ? title.toLowerCase() : '';
+    const hasRemoteSignal = remoteKeywords.length > 0
+      && [...remoteKeywords].some(k => lower.includes(k) || titleLower.includes(k));
+    const hasCountrySignal = countryKeywords.length > 0
+      && countryKeywords.some(k => lower.includes(k) || titleLower.includes(k));
+    const hasBlockedSignal = block.length > 0
+      && block.some(k => lower.includes(k) || titleLower.includes(k));
+
+    if (requireRemoteElsewhere) {
+      if (officeCities.length > 0 && officeCities.some(k => lower.includes(k))) return true;
+      if (hasRemoteSignal && (hasCountrySignal || !hasBlockedSignal)) return true;
+    }
+
     if (alwaysAllow.length > 0 && alwaysAllow.some(k => lower.includes(k))) return true;
     if (block.length > 0 && block.some(k => lower.includes(k))) return false;
     if (allow.length === 0) return true;
@@ -464,7 +483,7 @@ async function main() {
           totalFilteredTitle++;
           continue;
         }
-        if (!locationFilter(job.location)) {
+        if (!locationFilter(job)) {
           totalFilteredLocation++;
           continue;
         }
