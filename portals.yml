@@ -40,10 +40,6 @@ location_filter:
   office_cities:
     - "Ankara"
   always_allow:
-    - "Remote"
-    - "Relocation"
-    - "Visa"
-    - "Sponsorship"
     - "Turkey"
     - "Türkiye"
     - "Ankara"
@@ -192,4 +188,17 @@ tracked_companies:
     careers_url: "https://job-boards.greenhouse.io/contentful"
     api: "https://boards-api.greenhouse.io/v1/boards/contentful/jobs"
     notes: "Berlin/London/Dublin presence; international engineering org."
+    enabled: true
+  - name: "Bitpanda"
+    careers_url: "https://job-boards.eu.greenhouse.io/bitpanda"
+    api: "https://boards-api.greenhouse.io/v1/boards/bitpanda/jobs"
+    notes: "Vienna-HQ crypto/fintech, hybrid roles seen in Bucharest; verified 2026-09-03, RestAssured/Playwright QA roles have appeared before (job ID from that scan was gone by eval time, but company reposts QA roles regularly)."
+    enabled: true
+  - name: "Deel"
+    careers_url: "https://www.deel.com/careers"
+    notes: "Global EOR/payroll platform, hires QA Automation EMEA-wide including Turkey explicitly in some postings; uses Ashby but the public API slug could not be confirmed (returns 0 jobs) — Level 1 Playwright/WebFetch only, not zero-token scan.mjs, until a working API slug is found."
+    enabled: true
+  - name: "Insider (Insider One)"
+    careers_url: "https://insiderone.com/careers/"
+    notes: "Turkish martech unicorn, has posted Remote-from-Turkey Senior QA roles before; no external ATS, custom listing on their own domain (0 QA openings as of 2026-09-03) — Level 1 Playwright/WebFetch only, no API available."
     enabled: true
