@@ -202,3 +202,90 @@ tracked_companies:
     careers_url: "https://insiderone.com/careers/"
     notes: "Turkish martech unicorn, has posted Remote-from-Turkey Senior QA roles before; no external ATS, custom listing on their own domain (0 QA openings as of 2026-09-03) — Level 1 Playwright/WebFetch only, no API available."
     enabled: true
+
+job_boards:
+  - name: "Landing.jobs"
+    provider: "landingjobs"
+    notes: "Europe-focused tech board (Portugal/Spain heavy, EU-wide listings)."
+    enabled: true
+  - name: "getManfred"
+    provider: "manfred"
+    lang: "EN"
+    notes: "Spanish/EU tech roles, salary ranges published."
+    enabled: true
+  - name: "RemoteOK"
+    provider: "remoteok"
+    enabled: true
+  - name: "Remotive"
+    provider: "remotive"
+    enabled: true
+  - name: "We Work Remotely"
+    provider: "weworkremotely"
+    enabled: true
+  - name: "Working Nomads"
+    provider: "workingnomads"
+    enabled: true
+  - name: "Jobicy"
+    provider: "jobicy"
+    enabled: true
+  - name: "Himalayas"
+    provider: "himalayas"
+    enabled: true
+  - name: "Welcome to the Jungle"
+    provider: "wttj"
+    wttj:
+      queries: ["QA automation engineer", "test automation engineer", "SDET"]
+      max_hits: 100
+    notes: "Global board via WTTJ's public Algolia index; French/EU-heavy listings. Disabled 2026-09-03: of 35 hits in one scan, only ~3 were live+matching after manual verification (most were closed/hybrid-onsite with no remote/relocation) — WTTJ's Algolia index appears to lag far behind actual posting status, and WebFetch/browser verification of individual WTTJ URLs is blocked by Cloudflare (403), so results can't be liveness-checked at scan time. Re-enable only if a more reliable verification path is found."
+    enabled: false
+  - name: "The Hub"
+    provider: "thehub"
+    max_pages: 3
+    thehub:
+      countryCode: "EU"
+      includeRemote: true
+    notes: "Nordic/EU startup board (Denmark-rooted) — North Europe coverage."
+    enabled: true
+  - name: "Arbeitnow"
+    provider: "arbeitnow"
+    max_pages: 3
+    notes: "Germany-focused board with a remote filter — West/Central Europe coverage."
+    enabled: true
+  - name: "Bundesagentur fur Arbeit"
+    provider: "arbeitsagentur"
+    arbeitsagentur:
+      keywords: ["QA Automation Engineer", "Test Automation Engineer", "Software Test Engineer", "SDET"]
+      days: 30
+    notes: "German Federal Employment Agency's own job board — comprehensive, government-run, not just startups."
+    enabled: true
+  - name: "VDAB"
+    provider: "vdab"
+    vdab:
+      days: 30
+    notes: "Belgium's public employment service — keywords fall back to config/profile.yml target_roles."
+    enabled: true
+  - name: "Get on Board"
+    provider: "getonbrd"
+    notes: "Spain/LatAm tech board."
+    enabled: true
+  - name: "NoDesk"
+    provider: "nodesk"
+    enabled: true
+  - name: "Jobspresso"
+    provider: "jobspresso"
+    notes: "Curated remote roles, public WordPress feed."
+    enabled: true
+  - name: "The Muse"
+    provider: "themuse"
+    notes: "Board-wide public jobs API."
+    enabled: true
+  - name: "JustJoin.it"
+    provider: "justjoin"
+    careers_url: "https://justjoin.it/job-offers"
+    notes: "Polish tech job board — East/CEE coverage."
+    enabled: true
+  - name: "NoFluffJobs"
+    provider: "nofluffjobs"
+    careers_url: "https://nofluffjobs.com"
+    notes: "Polish/CEE tech job board with salary transparency — East/CEE coverage."
+    enabled: true
